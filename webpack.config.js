@@ -90,7 +90,9 @@
             name: 'test-app',
             entry: './test-app/src/app.js',
             output: {
-                filename: './test-app/build/bundle.js',
+              libraryTarget: 'var',
+              library: 'TopSalesList',
+              filename: './test-app/build/bundle.js',
             },
             module: {
                 loaders: [
@@ -120,6 +122,49 @@
                     }
                 ]
             },
+            devtool: 'source-map',
+            node: {
+                console: true,
+                fs: 'empty',
+                tls: 'empty',
+                net: 'empty'
+            }
+        },
+        {
+            name: 'example-react-app',
+            entry: './test-app/src/example.js',
+            output: {
+              filename: './test-app/build/example.js',
+            },
+            module: {
+                loaders: [
+                    {
+                        test: /\.js$/,
+                        exclude: /node_modules/,
+                        loader: "babel-loader"
+                    },
+                    {
+                        test: /\.scss$/,
+                        exclude: /node_modules/,
+                        use: [
+                            {
+                                loader: 'style-loader'  // creates style nodes from JS strings
+                            },
+                            {
+                                loader: 'css-loader',   // translates CSS into CommonJS
+                                options: {
+                                    modules: true,
+                                    localIdentName: 'echo-component-[name]-[hash:base64:5]'
+                                }
+                            },
+                            {
+                                loader: "sass-loader"   // compiles Sass to CSS
+                            }
+                        ]
+                    }
+                ]
+            },
+            devtool: 'source-map',
             node: {
                 console: true,
                 fs: 'empty',

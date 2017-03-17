@@ -1,1 +1,93 @@
-//write styles here
+$border: 1px solid #f1f2f2;
+$color: #000000;
+$light: #CCCCCC;
+$fontSm: 10px;
+
+.tslWrapper * {
+  box-sizing: border-box;
+}
+
+.tslWrapper {
+  border: $border;
+  color: $color;
+  font-weight: 100;
+  font-family: 'Roboto', sans-serif;
+  padding: 10px;
+  display: inline-block;
+}
+
+.tslHeader {
+  height: 50px;
+  font-size: 18px;
+}
+
+.tslList {
+  padding: 0px 15px;
+  margin: 0;
+}
+
+.tslListItem {
+  list-style: none;
+  align-items: center;
+  display: flex;
+}
+
+.tslListIdx {
+  width: 30px;
+  height: 30px;
+  background: #9bca3c;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.tslListInfo {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  padding: 8px 0;
+  border-top: $border;
+}
+
+.tslProductText {
+  font-size: 14px;
+  max-width: 100%;
+  display: inline-block;
+  position: relative;
+}
+
+.tslProductName {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  text-overflow: ellipsis;
+}
+
+.tslToolTip {
+  visibility: hidden;
+  opacity: 0;
+  white-space: nowrap;
+  border-radius: 4px;
+  padding: 5px;
+  background: #f1f38e;
+  transition: visibility 0s 500ms, opacity 500ms;
+  position: absolute;
+  font-size: $fontSm;
+  top: -19px;
+  left: 10px;
+}
+
+
+.tslToolTipShow {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+.tslRevenue {
+  color: $light;
+  font-size: $fontSm;
+}
