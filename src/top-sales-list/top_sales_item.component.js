@@ -14,8 +14,8 @@ export default class TopSalesListItem extends React.Component {
 
   renderProductName() {
     // For bigger projects I'd use https://github.com/JedWatson/classnames.
-    let toolTipClass = Styles.tslToolTip;
-    if (this.state.toolTipClass) toolTipClass += ' ' + Styles.tslToolTipShow;
+    let toolTipClass = `${Styles.tslToolTip} ${Styles.tslHide}`;
+    if (this.state.toolTipClass) toolTipClass += ` ${Styles.tslShow}`;
 
     return(
       <div

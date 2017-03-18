@@ -67,21 +67,23 @@ $fontSm: 10px;
 }
 
 .tslToolTip {
-  visibility: hidden;
-  opacity: 0;
   white-space: nowrap;
   border-radius: 4px;
   padding: 5px;
   background: #f1f38e;
-  transition: visibility 0s 500ms, opacity 500ms;
   position: absolute;
   font-size: $fontSm;
   top: -19px;
   left: 10px;
 }
 
+.tslHide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 500ms, opacity 500ms;
+}
 
-.tslToolTipShow {
+.tslShow {
   visibility: visible;
   opacity: 1;
   transition: opacity 500ms;

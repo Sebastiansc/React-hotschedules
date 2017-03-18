@@ -42,6 +42,12 @@
                         ]
                     }
                 ]
+            },
+            node: {
+                console: true,
+                fs: 'empty',
+                tls: 'empty',
+                net: 'empty'
             }
         },
         {
